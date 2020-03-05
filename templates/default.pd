@@ -1,0 +1,2 @@
+set ::meters 1
+pdsend "pd meters 1"

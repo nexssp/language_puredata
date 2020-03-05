@@ -3,11 +3,14 @@ languageConfig.title = "Pure Data";
 languageConfig.description =
   "Pure Data (or just Pd) is an open source visual programming language for multimedia.";
 languageConfig.url = "https://puredata.info";
+languageConfig.founders = ["Miller S. Puckette"];
+languageConfig.developers = [""];
+languageConfig.years = ["1996"];
 languageConfig.extensions = [".pd"];
 languageConfig.builders = {};
 languageConfig.compilers = {
   pd: {
-    install: `Powershell -File ${__dirname}/install/installPureData.ps1 && ${__dirname}/install/pd-0.50-0.windows-installer.exe`,
+    install: `nexss install/PureData`,
     // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
     command: "pd",
     args: "<file>",
