@@ -10,16 +10,15 @@ languageConfig.extensions = [".pd"];
 languageConfig.builders = {};
 languageConfig.compilers = {
   pd: {
-    install: `nexss install/PureData`,
-    // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
+    install: `nexss install/puredata.nexss`,
     command: "pd",
     args: "<file>",
-    help: ``
-  }
+    help: ``,
+  },
 };
 languageConfig.errors = require("./nexss.puredata.errors");
 languageConfig.languagePackageManagers = {
-  npm: {
+  deken: {
     installation: `PowerShell.exe -File ${__dirname}/install/installPureData.ps1`,
     messageAfterInstallation: "",
     installed: "installed",
@@ -31,8 +30,8 @@ languageConfig.languagePackageManagers = {
     init: () => {},
     // if command not found in specification
     // run directly on package manager
-    else: "composer <default> <args>"
-  }
+    else: "composer <default> <args>",
+  },
 };
 
 module.exports = languageConfig;
